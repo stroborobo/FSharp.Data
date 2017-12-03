@@ -326,6 +326,11 @@
  Extension methods with operations on JSON values
 </summary>
 </member>
+<member name="M:FSharp.Data.CsvFile.TryGetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name, or returns None if no column is found
+</summary>
+</member>
 <member name="M:FSharp.Data.CsvFile.Parse(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Parses the specified CSV content
@@ -344,6 +349,11 @@
 <member name="M:FSharp.Data.CsvFile.Load(System.IO.Stream,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Loads CSV from the specified stream
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.GetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name
 </summary>
 </member>
 <member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
@@ -3059,129 +3069,6 @@
  Helper functions called from the generated code for working with HTML tables
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedTypeDefinition(System.Reflection.Assembly,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Type},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
-<summary>
- When making a cross-targeting type provider, use this method instead of the corresponding ProvidedTypeDefinition constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedTypeDefinition(System.String,Microsoft.FSharp.Core.FSharpOption{System.Type},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
-<summary>
- When making a cross-targeting type provider, use this method instead of the corresponding ProvidedTypeDefinition constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedStaticParameter(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Object})">
-<summary>
- Create a new provided static parameter, for use with DefineStaticParamaeters on a provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedParameter constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedProperty``2(System.String,System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},``0},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},``1},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter}})">
-<summary>
- Create a new provided getter/setter property. It is not initially associated with any specific provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedProperty``1(System.String,System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},``0},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter}})">
-<summary>
- Create a new provided getter property. It is not initially associated with any specific provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedParameter(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Object})">
-<summary>
- Create a new provided parameter.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedMethod(System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter},System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
-<summary>
- When making a cross-targeting type provider, use this method instead of the ProvidedMethod constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedLiteralField(System.String,System.Type,System.Object)">
-<summary>
- Create a new provided literal field. It is not initially associated with any specific provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedField(System.String,System.Type)">
-<summary>
- Create a new provided field. It is not initially associated with any specific provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedEvent``2(System.String,System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},``0},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},``1})">
-<summary>
- Create a new provided event. It is not initially associated with any specific provided type definition.
-
- When making a cross-targeting type provider, use this method instead of the ProvidedProperty constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedConstructor(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- When making a cross-targeting type provider, use this method instead of the ProvidedConstructor constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.ProvidedConstructor(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter})">
-<summary>
- When making a cross-targeting type provider, use this method instead of the ProvidedConstructor constructor from ProvidedTypes
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.MakeGenericType(System.Type,Microsoft.FSharp.Collections.FSharpList{System.Type})">
-<summary>
- When making a cross-targeting type provider, use this method instead of ProvidedTypeBuilder.MakeGenericType
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesContext.MakeGenericMethod(System.Reflection.MethodInfo,Microsoft.FSharp.Collections.FSharpList{System.Type})">
-<summary>
- When making a cross-targeting type provider, use this method instead of ProvidedTypeBuilder.MakeGenericMethod
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypesContext">
-<summary>
- Represents the type binding context for the type provider based on the set of assemblies
- referenced by the compilation.
-</summary>
-</member>
-<member name="F:ProviderImplementation.AssemblyReplacer.varTable">
-<summary>
- When translating quotations, Expr.Var&apos;s are translated to new variable respecting reference equality.
-</summary>
-</member>
-<member name="T:ProviderImplementation.AssemblyReplacer">
-<summary>
- A cross-targeting type provider must ultimately provide quotations and reflection objects w.r.t.
- the type binding context for the target assembly reference set.
-
- To make building a cross-targeting type provider palatable, the type provider is written w.r.t. to
- homogeneous quotations and reflection objects referring to a copy of the target runtime constructs held
- in the design-time assembly itself.   These are then systematically remapped (replaced/translated) to the
- corresponding reflection objects in the target assembly reference set.
-
- The AssemblyReplacer acts as a way of creating provided objects where the replacement is automatically and
- systematically applied.
-
- When making a cross-targeting type provider, calls to
-    ProvidedTypeDefinition
-    ProvidedParameter,
-    ProvidedProperty
-    ProvidedConstructor,
-    ProvidedMethod
- should be replaced by
-    bindingContext.ProvidedTypeDefinition
-    bindingContext.ProvidedParameter,
-    bindingContext.ProvidedProperty
-    bindingContext.ProvidedConstructor,
-    bindingContext.ProvidedMethod
-
-</summary>
-</member>
 <member name="T:ProviderImplementation.JsonGenerationContext">
 <summary>
  Context that is used to generate the JSON types.
@@ -3190,6 +3077,13 @@
 <member name="T:ProviderImplementation.XmlGenerationContext">
 <summary>
  Context that is used to generate the XML types.
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.TargetContext">
+<summary>
+ The context for which code is eventually to be generated. You should not normally
+ need to use this property directly, as translation from the compiler-hosted context to 
+ the design-time context will normally be performed automatically.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.Namespaces">
@@ -3232,12 +3126,12 @@
  Invoked by the type provider to add a namespace of provided types in the specification of the type provider.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor">
+<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
 <summary>
  Initializes a type provider
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition})">
+<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
 <summary>
  Initializes a type provider to provide the types in the given namespace.
 </summary>
@@ -3248,37 +3142,67 @@
  types are of type ProvidedTypeDefinition.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedAssembly.RegisterGenerated(System.String)">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ReferencedAssemblyPaths">
 <summary>
- Register that a given file is a provided generated assembly
+ Get the list of referenced assemblies determined by the type provider configuration
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedAssembly.AddTypes(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition})">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.FSharpCoreAssemblyVersion">
 <summary>
- Emit the given provided type definitions as part of the assembly
- and adjust the &apos;Assembly&apos; property of all provided type definitions to return that
- assembly.
-
- The assembly is only emitted when the Assembly property on the root type is accessed for the first time.
- The host F# compiler does this when processing a generative type declaration for the type.
+ Try to get the version of FSharp.Core referenced. May raise an exception if FSharp.Core has not been correctly resolved
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedAssembly.AddNestedTypes(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition},Microsoft.FSharp.Collections.FSharpList{System.String})">
- <summary>
- Emit the given nested provided type definitions as part of the assembly.
- and adjust the 'Assembly' property of all provided type definitions to return that
- assembly.
- </summary>
- <param name="enclosingTypeNames">A path of type names to wrap the generated types. The generated types are then generated as nested types.</param>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedAssembly.#ctor(System.String)">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.TryBindSimpleAssemblyNameToTarget(System.String)">
 <summary>
- Create a provided generated assembly
+ Try to find the given target assembly in the context
 </summary>
 </member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedAssembly">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.TryBindAssemblyNameToTarget(System.Reflection.AssemblyName)">
 <summary>
- A provided generated assembly
+ Try to find the given target assembly in the context
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ReadRelatedAssembly(System.Byte[])">
+<summary>
+ Read the assembly related to this context
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ReadRelatedAssembly(System.String)">
+<summary>
+ Read the assembly related to this context
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.GetTargetAssemblies">
+<summary>
+ Get the resolved referenced assemblies determined by the type provider configuration
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.GetSourceAssemblies">
+<summary>
+ Get the set of design-time assemblies available to use as a basis for authoring provided types
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ConvertTargetTypeToSource(System.Type)">
+<summary>
+ Returns the design-time type that corresponds to the given type from the target referenced assemblies.  Normally
+ this method should not be used directly when authoring a type provider.
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ConvertSourceTypeToTarget(System.Type)">
+<summary>
+ Returns a type from the referenced assemblies that corresponds to the given design-time type.  Normally
+ this method should not be used directly when authoring a type provider.
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ConvertSourceExprToTarget(Microsoft.FSharp.Quotations.FSharpExpr)">
+<summary>
+ Returns a quotation rebuilt with resepct to the types from the target referenced assemblies.  Normally
+ this method should not be used directly when authoring a type provider.
+</summary>
+</member>
+<member name="T:ProviderImplementation.ProvidedTypes.ProvidedTypesContext">
+<summary>
+ Represents the context for which code is to be generated. Normally you should not need to use this directly.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.SuppressRelocation(System.Boolean)">
@@ -3286,24 +3210,14 @@
  Get or set a flag indicating if the ProvidedTypeDefinition has type-relocation suppressed
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.NonNullable(System.Boolean)">
-<summary>
- Disallows the use of the null literal.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.IsErased(System.Boolean)">
-<summary>
- Get or set a flag indicating if the ProvidedTypeDefinition is erased
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.HideObjectMethods(System.Boolean)">
-<summary>
- Suppress Object entries in intellisense menus in instances of this provided type
-</summary>
-</member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.SuppressRelocation">
 <summary>
  Get or set a flag indicating if the ProvidedTypeDefinition has type-relocation suppressed
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.NonNullable">
+<summary>
+ Disallows the use of the null literal.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.Logger">
@@ -3313,7 +3227,12 @@
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.IsErased">
 <summary>
- Get or set a flag indicating if the ProvidedTypeDefinition is erased
+ Get a flag indicating if the ProvidedTypeDefinition is erased
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.HideObjectMethods">
+<summary>
+ Suppress Object entries in intellisense menus in instances of this provided type
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.SetEnumUnderlyingType(System.Type)">
@@ -3334,11 +3253,6 @@
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.SetAttributes(System.Reflection.TypeAttributes)">
 <summary>
  Set the attributes on the provided type. This fully replaces the default TypeAttributes.
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.ResetEnclosingType(System.Type)">
-<summary>
- Reset the enclosing type (for generated nested types)
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.EraseType(System.Type)">
@@ -3427,14 +3341,14 @@
  Add the types of the generated assembly as generative types, where types in namespaces get hierarchically positioned as nested types.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.#ctor(System.String,Microsoft.FSharp.Core.FSharpOption{System.Type})">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.#ctor(System.Reflection.Assembly,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Type},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
 <summary>
- Create a new provided type definition, to be located as a nested type in some type definition.
+ When making a cross-targeting type provider, use this method instead of the corresponding ProvidedTypeDefinition constructor from ProvidedTypes
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.#ctor(System.Reflection.Assembly,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Type})">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.#ctor(System.String,Microsoft.FSharp.Core.FSharpOption{System.Type},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
 <summary>
- Create a new provided type definition in a namespace.
+ When making a cross-targeting type provider, use this method instead of the corresponding ProvidedTypeDefinition constructor from ProvidedTypes
 </summary>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition">
@@ -3486,11 +3400,6 @@
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedMeasureBuilder">
 <summary>
  Helps create erased provided unit-of-measure annotations.
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ZProvidedTypeBuilder">
-<summary>
- Used internally for ProvidedTypesContext
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeBuilder.MakeGenericType(System.Type,Microsoft.FSharp.Collections.FSharpList{System.Type})">
@@ -3570,6 +3479,11 @@
  Represents the type constructor in a provided symbol type.
 </summary>
 </member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedField.Literal(System.String,System.Type,System.Object)">
+<summary>
+ Create a new provided literal field. It is not initially associated with any specific provided type definition.
+</summary>
+</member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedField.AddXmlDocDelayed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.String})">
 <summary>
  Add XML documentation information to this provided field, where the computation of the documentation is delayed until necessary
@@ -3606,55 +3520,9 @@
  Represents an erased provided field.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.AddXmlDocDelayed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.String})">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedEvent.IsStatic">
 <summary>
- Add XML documentation information to this provided field, where the computation of the documentation is delayed until necessary
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.AddXmlDocComputed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.String})">
-<summary>
- Add XML documentation information to this provided field, where the computation of the documentation is delayed until necessary
- The documentation is re-computed  every time it is required.
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.AddXmlDoc(System.String)">
-<summary>
- Add XML documentation information to this provided field
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.AddObsoleteAttribute(System.String,Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
-<summary>
- Add a &apos;Obsolete&apos; attribute to this provided field
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.AddDefinitionLocation(System.Int32,System.Int32,System.String)">
-<summary>
- Add definition location information to the provided field.
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedLiteralField.#ctor(System.String,System.Type,System.Object)">
-<summary>
- Create a new provided field. It is not initially associated with any specific provided type definition.
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedLiteralField">
-<summary>
- Represents an erased provided field.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedEvent.RemoverCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the function used to compute the implementation of sets of this property.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedEvent.IsStatic(System.Boolean)">
-<summary>
- Get or set a flag indicating if the property is static.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedEvent.AdderCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the quotation used to compute the implementation of gets of this property.
+ Get a flag indicating if the property is static.
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedEvent.AddXmlDocDelayed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.String})">
@@ -3678,29 +3546,14 @@
  Add definition location information to the provided type definition.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedEvent.#ctor(System.String,System.Type)">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedEvent.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
 <summary>
- Create a new provided type. It is not initially associated with any specific provided type definition.
+ Create a new provided event. It is not initially associated with any specific provided type definition.
 </summary>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedEvent">
 <summary>
  Represents an erased provided property.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedProperty.SetterCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the function used to compute the implementation of sets of this property.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedProperty.IsStatic(System.Boolean)">
-<summary>
- Get or set a flag indicating if the property is static.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedProperty.GetterCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the quotation used to compute the implementation of gets of this property.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedProperty.IsStatic">
@@ -3739,7 +3592,7 @@
  Add a custom attribute to the provided property definition.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedProperty.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter}})">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedProperty.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter}})">
 <summary>
  Create a new provided property. It is not initially associated with any specific provided type definition.
 </summary>
@@ -3749,24 +3602,14 @@
  Represents an erased provided property.
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedMethod.IsStaticMethod(System.Boolean)">
-<summary>
- Get or set a flag indicating if the property is static.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedMethod.InvokeCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the quotation used to compute the implementation of invocations of this method.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedMethod.IsStaticMethod">
-<summary>
- Get or set a flag indicating if the property is static.
-</summary>
-</member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.SetMethodAttrs(System.Reflection.MethodAttributes)">
 <summary>
  Set the method attributes of the method. By default these are simple &apos;MethodAttributes.Public&apos;
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.GetInvokeCodeInternal(System.Boolean)">
+<summary>
+ This method is for internal use only in the type provider SDK
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.DefineStaticParameters(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedStaticParameter},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.Object[],ProviderImplementation.ProvidedTypes.ProvidedMethod}})">
@@ -3805,21 +3648,16 @@
  Add a custom attribute to the provided method definition.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.#ctor(System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter},System.Type)">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.#ctor(System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter},System.Type,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
 <summary>
- Create a new provided method. It is not initially associated with any specific provided type definition.
+ When making a cross-targeting type provider, use this method instead of the ProvidedMethod constructor from ProvidedTypes
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.IsImplicitCtor(System.Boolean)">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.IsImplicitConstructor(System.Boolean)">
 <summary>
  Set a flag indicating that the constructor acts like an F# implicit constructor, so the
  parameters of the constructor become fields and can be accessed using Expr.GlobalVar with the
  same name.
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.InvokeCode(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
-<summary>
- Set the quotation used to compute the implementation of invocations of this constructor.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.BaseConstructorCall(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},System.Tuple{System.Reflection.ConstructorInfo,Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr}}})">
@@ -3827,7 +3665,7 @@
  Set the target and arguments of the base constructor call. Only used for generated types.
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.IsImplicitCtor">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedConstructor.IsImplicitConstructor">
 <summary>
  Set a flag indicating that the constructor acts like an F# implicit constructor, so the
  parameters of the constructor become fields and can be accessed using Expr.GlobalVar with the
@@ -3836,7 +3674,7 @@
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.GetInvokeCodeInternal(System.Boolean)">
 <summary>
- This method is used by Debug.fs
+ This method is for internal use only in the type provider SDK
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.AddXmlDocDelayed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.String})">
@@ -3864,9 +3702,9 @@
  Add definition location information to the provided constructor.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.#ctor(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter})">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.#ctor(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedParameter},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr})">
 <summary>
- Create a new provided constructor. It is not initially associated with any specific provided type definition.
+ When making a cross-targeting type provider, use this method instead of the ProvidedConstructor constructor from ProvidedTypes
 </summary>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedConstructor">
@@ -3884,9 +3722,34 @@
  Add XML documentation information to this provided constructor
 </summary>
 </member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedStaticParameter.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Object})">
+<summary>
+ Create a new provided static parameter, for use with DefineStaticParamaeters on a provided type definition.
+</summary>
+</member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedStaticParameter">
 <summary>
  Represents a provided static parameter.
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedParameter.IsReflectedDefinition(System.Boolean)">
+<summary>
+ Indicates if the parameter is marked as ReflectedDefinition
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedParameter.IsParamArray(System.Boolean)">
+<summary>
+ Indicates if the parameter is marked as ParamArray
+</summary>
+</member>
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedParameter.HasDefaultParameterValue">
+<summary>
+ Indicates if the parameter has a default value
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedParameter.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+<summary>
+ Create a new provided parameter.
 </summary>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedParameter">
@@ -3894,35 +3757,7 @@
  Represents an erased provided parameter
 </summary>
 </member>
-<member name="T:ProviderImplementation.AssemblyReader.ILCallingConvStatics">
-<summary>
- Static storage to amortize the allocation of ILCallingConv.Instance and ILCallingConv.Static
-</summary>
-</member>
-<member name="T:ProviderImplementation.AssemblyReader.ILArgConvention">
-<summary>
- Calling conventions.  These are used in method pointer types.
-</summary>
-</member>
-<member name="T:ProviderImplementation.AssemblyReaderReflection.ContextTypeDefinition">
-<summary>
- Clones namespaces, type providers, types and members provided by tp, renaming namespace nsp1 into namespace nsp2.
- Makes a type definition read from a binary available as a System.Type. Not all methods are implemented.
-</summary>
-</member>
-<member name="T:ProviderImplementation.AssemblyReaderReflection.ContextTypeSymbol">
-<summary>
- Represents an array or other symbolic type involving a provided type as the argument.
- See the type provider spec for the methods that must be implemented.
- Note that the type provider specification does not require us to implement pointer-equality for provided types.
-</summary>
-</member>
-<member name="T:ProviderImplementation.AssemblyReaderReflection.ContextTypeSymbolKind">
-<summary>
- Represents the type constructor in a provided symbol type.
-</summary>
-</member>
-<member name="M:ProviderImplementation.ProvidedTypesTesting.Testing.MakeSimulatedTypeProviderConfig(System.String,System.String,Microsoft.FSharp.Collections.FSharpList{System.String})">
+<member name="M:ProviderImplementation.ProvidedTypesTesting.Testing.MakeSimulatedTypeProviderConfig(System.String,System.String,Microsoft.FSharp.Collections.FSharpList{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
 <summary>
  Simulates a real instance of TypeProviderConfig
 </summary>
@@ -3965,7 +3800,7 @@
 
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProviderHelpers.generateType``1(System.String,System.String,System.Boolean,Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0}},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0[]}},Microsoft.FSharp.Core.FSharpFunc{``0[],ProviderImplementation.ProviderHelpers.TypeProviderSpec},ProviderImplementation.AssemblyResolver.FSharpDataRuntimeInfo,ProviderImplementation.DisposableTypeProviderForNamespaces,Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,ProviderImplementation.ProvidedTypesContext,System.String,System.String,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:ProviderImplementation.ProviderHelpers.generateType``1(System.String,System.String,System.Boolean,Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0}},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0[]}},Microsoft.FSharp.Core.FSharpFunc{``0[],ProviderImplementation.ProviderHelpers.TypeProviderSpec},ProviderImplementation.AssemblyResolver.FSharpDataRuntimeInfo,ProviderImplementation.DisposableTypeProviderForNamespaces,Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,System.String,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Creates all the constructors for a type provider: (Async)Parse, (Async)Load, (Async)GetSample(s), and default constructor
  * sampleOrSampleUri - the text which can be a sample or an uri for a sample
@@ -3975,14 +3810,13 @@
  * getSpecFromSamples - receives a seq of parsed samples and returns a TypeProviderSpec
  * tp -&gt; the type provider
  * cfg -&gt; the type provider config
- * bindingContext -&gt; the provided types context
  * resolutionFolder -&gt; if the type provider allows to override the resolutionFolder pass it here
  * optResource - when specified, we first try to treat read the sample from an embedded resource
      (the value specified assembly and resource name e.g. &quot;MyCompany.MyAssembly, some_resource.json&quot;)
  * typeName -&gt; the full name of the type provider, this will be used for caching
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProviderHelpers.parseTextAtDesignTime``1(System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0[]}},System.String,FSharp.Data.Runtime.IO.IDisposableTypeProvider,Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,System.String,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:ProviderImplementation.ProviderHelpers.parseTextAtDesignTime``1(System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.String,``0[]}},System.String,ProviderImplementation.DisposableTypeProviderForNamespaces,Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,System.String,System.String,System.String,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Reads a sample parameter for a type provider, detecting if it is a uri and fetching it if needed
  Samples from the web are cached for 30 minutes

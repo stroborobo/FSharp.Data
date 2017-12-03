@@ -326,6 +326,11 @@
  Extension methods with operations on JSON values
 </summary>
 </member>
+<member name="M:FSharp.Data.CsvFile.TryGetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name, or returns None if no column is found
+</summary>
+</member>
 <member name="M:FSharp.Data.CsvFile.Parse(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Parses the specified CSV content
@@ -344,6 +349,11 @@
 <member name="M:FSharp.Data.CsvFile.Load(System.IO.Stream,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Loads CSV from the specified stream
+</summary>
+</member>
+<member name="M:FSharp.Data.CsvFile.GetColumnIndex(System.String)">
+<summary>
+ Returns the index of the column with the given name
 </summary>
 </member>
 <member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
