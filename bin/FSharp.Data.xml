@@ -201,7 +201,7 @@
  Parses the specified JSON string
 </summary>
 </member>
-<member name="M:FSharp.Data.JsonValue.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<member name="M:FSharp.Data.JsonValue.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads JSON from the specified uri
 </summary>
@@ -216,7 +216,7 @@
  Loads JSON from the specified stream
 </summary>
 </member>
-<member name="M:FSharp.Data.JsonValue.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<member name="M:FSharp.Data.JsonValue.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads JSON from the specified uri asynchronously
 </summary>
@@ -343,7 +343,7 @@
  Parses the specified CSV content
 </summary>
 </member>
-<member name="M:FSharp.Data.CsvFile.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:FSharp.Data.CsvFile.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads CSV from the specified uri
 </summary>
@@ -363,7 +363,7 @@
  Returns the index of the column with the given name
 </summary>
 </member>
-<member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads CSV from the specified uri asynchronously
 </summary>
@@ -437,7 +437,7 @@
  <param name="docType">The document type specifier string</param>
  <param name="children">The child elements of this document</param>
 </member>
-<member name="M:FSharp.Data.HtmlDocument.Load(System.String)">
+<member name="M:FSharp.Data.HtmlDocument.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads HTML from the specified uri
 </summary>
@@ -452,7 +452,7 @@
  Loads HTML from the specified stream
 </summary>
 </member>
-<member name="M:FSharp.Data.HtmlDocument.AsyncLoad(System.String)">
+<member name="M:FSharp.Data.HtmlDocument.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads HTML from the specified uri asynchronously
 </summary>

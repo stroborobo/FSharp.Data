@@ -201,7 +201,7 @@
  Parses the specified JSON string
 </summary>
 </member>
-<member name="M:FSharp.Data.JsonValue.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<member name="M:FSharp.Data.JsonValue.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads JSON from the specified uri
 </summary>
@@ -216,7 +216,7 @@
  Loads JSON from the specified stream
 </summary>
 </member>
-<member name="M:FSharp.Data.JsonValue.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
+<member name="M:FSharp.Data.JsonValue.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads JSON from the specified uri asynchronously
 </summary>
@@ -343,7 +343,7 @@
  Parses the specified CSV content
 </summary>
 </member>
-<member name="M:FSharp.Data.CsvFile.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:FSharp.Data.CsvFile.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads CSV from the specified uri
 </summary>
@@ -363,7 +363,7 @@
  Returns the index of the column with the given name
 </summary>
 </member>
-<member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<member name="M:FSharp.Data.CsvFile.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Char},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads CSV from the specified uri asynchronously
 </summary>
@@ -437,7 +437,7 @@
  <param name="docType">The document type specifier string</param>
  <param name="children">The child elements of this document</param>
 </member>
-<member name="M:FSharp.Data.HtmlDocument.Load(System.String)">
+<member name="M:FSharp.Data.HtmlDocument.Load(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads HTML from the specified uri
 </summary>
@@ -452,7 +452,7 @@
  Loads HTML from the specified stream
 </summary>
 </member>
-<member name="M:FSharp.Data.HtmlDocument.AsyncLoad(System.String)">
+<member name="M:FSharp.Data.HtmlDocument.AsyncLoad(System.String,Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
 <summary>
  Loads HTML from the specified uri asynchronously
 </summary>
@@ -3133,20 +3133,33 @@
  Invoked by the type provider to add a namespace of provided types in the specification of the type provider.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
-<summary>
- Initializes a type provider
-</summary>
+<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Reflection.Assembly}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
+ <summary>Initializes a type provider.</summary>
+ <param name="sourceAssemblies">
+    Optionally specify the design-time assemblies available to use as a basis for authoring provided types.
+    The transitive dependencies of these assemblies are also included. By default
+    Assembly.GetCallingAssembly() and its transitive dependencies are used.
+ </param>
+               
+ <param name="assemblyReplacementMap">
+    Optionally specify a map of assembly names from source model to referenced assemblies.
+ </param>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
-<summary>
- Initializes a type provider to provide the types in the given namespace.
-</summary>
+<member name="M:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces.#ctor(Microsoft.FSharp.Core.CompilerServices.TypeProviderConfig,System.String,Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Reflection.Assembly}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}})">
+ <summary>Initializes a type provider to provide the types in the given namespace.</summary>
+ <param name="sourceAssemblies">
+    Optionally specify the design-time assemblies available to use as a basis for authoring provided types.
+    The transitive dependencies of these assemblies are also included. By default
+    Assembly.GetCallingAssembly() and its transitive dependencies are used.
+ </param>
+               
+ <param name="assemblyReplacementMap">
+    Optionally specify a map of assembly names from source model to referenced assemblies.
+ </param>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.TypeProviderForNamespaces">
 <summary>
- A base type providing default implementations of type provider functionality when all provided
- types are of type ProvidedTypeDefinition.
+ A base type providing default implementations of type provider functionality.
 </summary>
 </member>
 <member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ReferencedAssemblyPaths">
@@ -3186,7 +3199,7 @@
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.GetSourceAssemblies">
 <summary>
- Get the set of design-time assemblies available to use as a basis for authoring provided types
+ Get the set of design-time assemblies available to use as a basis for authoring provided types.
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.ConvertTargetTypeToSource(System.Type)">
@@ -3205,6 +3218,11 @@
 <summary>
  Returns a quotation rebuilt with resepct to the types from the target referenced assemblies.  Normally
  this method should not be used directly when authoring a type provider.
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypesContext.AddSourceAssembly(System.Reflection.Assembly)">
+<summary>
+ Add an assembly to the set of design-time assemblies available to use as a basis for authoring provided types
 </summary>
 </member>
 <member name="T:ProviderImplementation.ProvidedTypes.ProvidedTypesContext">
@@ -3274,6 +3292,11 @@
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.DefineStaticParameters(Microsoft.FSharp.Collections.FSharpList{ProviderImplementation.ProvidedTypes.ProvidedStaticParameter},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{System.Object[],ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition}})">
 <summary>
  Define the static parameters available on a statically parameterized type
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.DefineMethodOverridesDelayed(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Collections.FSharpList{System.Tuple{ProviderImplementation.ProvidedTypes.ProvidedMethod,System.Reflection.MethodInfo}}})">
+<summary>
+ Specifies that the given method bodies implement the given method declarations
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition.DefineMethodOverride(ProviderImplementation.ProvidedTypes.ProvidedMethod,System.Reflection.MethodInfo)">
@@ -3368,11 +3391,6 @@
  Gets the measure indicating the &quot;1&quot; unit of measure, that is the unitless measure.
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedMeasureBuilder.Default">
-<summary>
- The ProvidedMeasureBuilder for building measures.
-</summary>
-</member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedMeasureBuilder.Square(System.Type)">
 <summary>
  Returns the measure indicating the square of a unit of measure, e.g. m * m
@@ -3409,6 +3427,11 @@
  Helps create erased provided unit-of-measure annotations.
 </summary>
 </member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeBuilder.MakeTupleType(Microsoft.FSharp.Collections.FSharpList{System.Type})">
+<summary>
+ Like FsharpType.MakeTupleType, but will also work with unit-annotated types and provided types
+</summary>
+</member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedTypeBuilder.MakeGenericType(System.Type,Microsoft.FSharp.Collections.FSharpList{System.Type})">
 <summary>
  Like typ.MakeGenericType, but will also work with unit-annotated types
@@ -3424,66 +3447,21 @@
  Helpers to build symbolic provided types
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedSymbolType.Kind">
-<summary>
- Returns the kind of this symbolic type
-</summary>
-</member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedSymbolType.IsFSharpUnitAnnotated">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeSymbol.IsFSharpUnitAnnotated">
 <summary>
  For example, int&lt;kg&gt; or int&lt;kilogram&gt;
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedSymbolType.IsFSharpTypeAbbreviation">
+<member name="P:ProviderImplementation.ProvidedTypes.ProvidedTypeSymbol.IsFSharpTypeAbbreviation">
 <summary>
  For example, kg
 </summary>
 </member>
-<member name="P:ProviderImplementation.ProvidedTypes.ProvidedSymbolType.Args">
-<summary>
- Return the provided types used as arguments of this symbolic type
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolType">
+<member name="T:ProviderImplementation.ProvidedTypes.ProvidedTypeSymbol">
 <summary>
  Represents an array or other symbolic type involving a provided type as the argument.
  See the type provider spec for the methods that must be implemented.
  Note that the type provider specification does not require us to implement pointer-equality for provided types.
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.FSharpTypeAbbreviation">
-<summary>
- Indicates that the type constructor is for abbreviated types
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.Generic">
-<summary>
- Indicates that the type constructor is for named generic types
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.ByRef">
-<summary>
- Indicates that the type constructor is for byref types
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.Pointer">
-<summary>
- Indicates that the type constructor is for pointer types
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.Array">
-<summary>
- Indicates that the type constructor is for a multi-dimensional array
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind.SDArray">
-<summary>
- Indicates that the type constructor is for a single-dimensional array
-</summary>
-</member>
-<member name="T:ProviderImplementation.ProvidedTypes.ProvidedSymbolKind">
-<summary>
- Represents the type constructor in a provided symbol type.
 </summary>
 </member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedField.Literal(System.String,System.Type,System.Object)">
@@ -3614,7 +3592,7 @@
  Set the method attributes of the method. By default these are simple &apos;MethodAttributes.Public&apos;
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.GetInvokeCodeInternal(System.Boolean)">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedMethod.GetInvokeCode(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr})">
 <summary>
  This method is for internal use only in the type provider SDK
 </summary>
@@ -3679,7 +3657,7 @@
  same name.
 </summary>
 </member>
-<member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.GetInvokeCodeInternal(System.Boolean)">
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedConstructor.GetInvokeCode(Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr})">
 <summary>
  This method is for internal use only in the type provider SDK
 </summary>
@@ -3754,6 +3732,11 @@
  Indicates if the parameter has a default value
 </summary>
 </member>
+<member name="M:ProviderImplementation.ProvidedTypes.ProvidedParameter.AddCustomAttribute(System.Reflection.CustomAttributeData)">
+<summary>
+ Add a custom attribute to the provided parameter.
+</summary>
+</member>
 <member name="M:ProviderImplementation.ProvidedTypes.ProvidedParameter.#ctor(System.String,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Object})">
 <summary>
  Create a new provided parameter.
@@ -3790,6 +3773,11 @@
 <member name="T:ProviderImplementation.ProvidedTypesTesting.DllInfo">
 <summary>
  Simulate a real host of TypeProviderConfig
+</summary>
+</member>
+<member name="M:ProviderImplementation.ProvidedTypesTesting.Targets.fsharpRestoredAssembliesPath(System.String,System.String)">
+<summary>
+ Compute a path to an FSharp.Core suitable for the target profile
 </summary>
 </member>
 <member name="M:ProviderImplementation.QuotationBuilder.op_Dynamic``2(System.Type,System.String,``0,``1)">
