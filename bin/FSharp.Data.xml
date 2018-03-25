@@ -2,13 +2,6 @@
 <doc>
 <assembly><name>FSharp.Data</name></assembly>
 <members>
-<member name="M:FSharp.Data.Http.UrlEncode(System.String)">
-<summary>
- Correctly encodes large form data values.
- See https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
- and https://msdn.microsoft.com/en-us/library/system.uri.escapedatastring(v=vs.110).aspx
-</summary>
-</member>
 <member name="M:FSharp.Data.Http.RequestString(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
 <summary>
  Download an HTTP web resource from the specified URL synchronously
@@ -34,6 +27,13 @@
  headers that have to be handled specially - such as Accept, Content-Type &amp; Referer)
  The body for POST request can be specified either as text or as a list of parameters
  that will be encoded, and the method will automatically be set if not specified
+</summary>
+</member>
+<member name="M:FSharp.Data.Http.EncodeFormData(System.String)">
+<summary>
+ Correctly encodes large form data values.
+ See https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
+ and https://msdn.microsoft.com/en-us/library/system.uri.escapedatastring(v=vs.110).aspx
 </summary>
 </member>
 <member name="M:FSharp.Data.Http.AsyncRequestString(System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{FSharp.Data.HttpRequestBody},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Net.HttpWebRequest,System.Net.HttpWebRequest}},Microsoft.FSharp.Core.FSharpOption{System.Int32})">
@@ -178,12 +178,12 @@
 </member>
 <member name="M:FSharp.Data.JsonValue.RequestAsync(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}})">
 <summary>
- Sends the JSON to the specified uri. Defaults to a POST request.
+ Sends the JSON to the specified URL asynchronously. Defaults to a POST request.
 </summary>
 </member>
 <member name="M:FSharp.Data.JsonValue.Request(System.String,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}}})">
 <summary>
- Sends the JSON to the specified uri. Defaults to a POST request.
+ Sends the JSON to the specified URL synchronously. Defaults to a POST request.
 </summary>
 </member>
 <member name="M:FSharp.Data.JsonValue.ParseSample(System.String,Microsoft.FSharp.Core.FSharpOption{System.Globalization.CultureInfo})">
@@ -1483,6 +1483,11 @@
 <member name="M:FSharp.Data.HttpRequestHeaders.Date(System.DateTime)">
 <summary>
  The date and time that the message was sent
+</summary>
+</member>
+<member name="M:FSharp.Data.HttpRequestHeaders.ContentTypeWithEncoding(System.String,System.Text.Encoding)">
+<summary>
+ The MIME type of the body of the request (used with POST and PUT requests) with an explicit encoding
 </summary>
 </member>
 <member name="M:FSharp.Data.HttpRequestHeaders.ContentType(System.String)">
