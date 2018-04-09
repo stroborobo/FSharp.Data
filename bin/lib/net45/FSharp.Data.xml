@@ -2352,7 +2352,7 @@
  Returns a TextReader for the uri using the runtime resolution rules
 </summary>
 </member>
-<member name="M:FSharp.Data.Runtime.IO.asyncRead(Microsoft.FSharp.Core.FSharpOption{System.Tuple{FSharp.Data.Runtime.IO.IDisposableTypeProvider,System.String}},FSharp.Data.Runtime.IO.UriResolver,System.String,System.String,System.Uri)">
+<member name="M:FSharp.Data.Runtime.IO.asyncRead(FSharp.Data.Runtime.IO.UriResolver,System.String,System.String,System.Uri)">
 <summary>
  Opens a stream to the uri using the uriResolver resolution rules
  It the uri is a file, uses shared read, so it works when the file locked by Excel or similar tools,
@@ -2362,11 +2362,6 @@
 <member name="T:FSharp.Data.Runtime.IO">
 <summary>
  Helper functions called from the generated code for working with files
-</summary>
-</member>
-<member name="T:FSharp.Data.Runtime.Caching.ICache`1">
-<summary>
- Represents a cache (various implementations are available)
 </summary>
 </member>
 <member name="M:FSharp.Data.Runtime.Caching.createInternetFileCache(System.String,System.TimeSpan)">
@@ -2379,14 +2374,9 @@
  Get hash code of a string - used to determine cache file
 </summary>
 </member>
-<member name="M:FSharp.Data.Runtime.Caching.createInMemoryCache``1(System.TimeSpan)">
+<member name="M:FSharp.Data.Runtime.Caching.createInMemoryCache``2(System.TimeSpan)">
 <summary>
  Creates a cache that uses in-memory collection
-</summary>
-</member>
-<member name="M:FSharp.Data.Runtime.Caching.createNonCachingCache``1">
-<summary>
- Creates a fake cache
 </summary>
 </member>
 <member name="T:FSharp.Data.Runtime.Caching">
