@@ -2967,6 +2967,13 @@
  Implements type inference for unstructured documents like XML or JSON
 </summary>
 </member>
+<member name="T:FSharp.Data.Runtime.XmlSchema.ResolutionFolderResolver">
+<summary>
+ A custom XmlResolver is needed for included files because we get the contents of the main file
+ directly as a string from the FSharp.Data infrastructure. Hence the default XmlResolver is not
+ able to find the location of included schema files.
+</summary>
+</member>
 <member name="T:FSharp.Data.Runtime.CsvHelpers.ReentrantEnumerable`1">
 <summary>
  An enumerable that will return elements from the &apos;firstSeq&apos; first time it
